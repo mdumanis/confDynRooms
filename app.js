@@ -50,8 +50,11 @@ app.post('/dialConf',
                var conferenceRoom="Conference"+iGathered;
                var owner=i_Req.query.owner;
                var milliseconds = (new Date).getTime();
-               var musicFiles =  [  "http://twimlets.com/holdmusic?Bucket=com.twilio.music.classical" ,
+               var musicFiles =  ["http://twimlets.com/holdmusic?Bucket=com.twilio.music.classical" ,
+                                  "http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient",
+                                  "http://twimlets.com/holdmusic?Bucket=com.twilio.music.electronica",
                                   "http://twimlets.com/holdmusic?Bucket=com.twilio.music.guitars",
+                                  "http://twimlets.com/holdmusic?Bucket=com.twilio.music.rock",
                                   "http://twimlets.com/holdmusic?Bucket=com.twilio.music.soft-rock"
                                  ];
 
@@ -60,7 +63,7 @@ app.post('/dialConf',
                                          function()
                                              {
                                                   this.conference(conferenceRoom,
-                                                                  {waitUrl:musicFiles[milliseconds % 3],
+                                                                  {waitUrl:musicFiles[milliseconds % 6],
                                                                     waitMethod:"GET"
                                                                   }
                                                                  );
