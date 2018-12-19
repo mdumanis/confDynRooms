@@ -60,7 +60,7 @@ app.post('/dialConf',
                                          function()
                                              {
                                                   this.conference(conferenceRoom,
-                                                                  {waitUrl:musicFiles[milliseconds % 6],
+                                                                  {waitUrl:musicFiles[milliseconds % 3],
                                                                     waitMethod:"GET"
                                                                   }
                                                                  );
